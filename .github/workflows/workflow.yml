@@ -1,6 +1,5 @@
-on:
-  push:
-    branches: [ "main" ]
+on: [push]
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
@@ -8,10 +7,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: run the action
-      id: hello1
+      id: hello
       uses: ./
       with:
-        myInput: 'Chadd'
+        myInput: 'Chad'
     - name: output the memory
       run: |
         echo ${{ steps.hello.outputs.memory }}
